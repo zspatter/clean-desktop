@@ -201,3 +201,4 @@ local.properties
 .scala_dependencies
 .worksheet
 .~lock.*#
+__pycache__
