@@ -1,2 +1,2 @@
-# desktop-cleaner
+# clean-desktop
 Automated desktop cleaner
