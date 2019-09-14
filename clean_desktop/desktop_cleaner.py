@@ -9,13 +9,14 @@ if __name__ == '__main__':
     watch_path = Path('/Users/zspatter/Desktop')
     destination_root = Path('/Users/zspatter/Desktop/holder of things')
     event_handler = EventHandler(watch_path=watch_path, destination_root=destination_root)
+
     observer = Observer()
     observer.schedule(event_handler, f'{watch_path}', recursive=True)
     observer.start()
 
     try:
         while True:
-            sleep(10)
+            sleep(60)
     except KeyboardInterrupt:
         observer.stop()
     observer.join()
