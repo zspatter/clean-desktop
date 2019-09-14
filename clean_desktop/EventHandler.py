@@ -48,7 +48,8 @@ class EventHandler(FileSystemEventHandler):
 
     def on_modified(self, event):
         for child in self.watch_path.iterdir():
-            if child.is_file() and child.name != '.DS_Store':
+            # skips directories and non-specified extensions
+            if child.is_file() and child.suffix.lower() in extension_paths:
                 destination_path = self.destination_root / extension_paths[child.suffix.lower()]
                 destination_path = add_date_to_path(path=destination_path)
                 destination_path = rename_file(source=child, destination_path=destination_path)
