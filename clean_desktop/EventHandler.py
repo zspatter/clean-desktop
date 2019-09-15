@@ -1,6 +1,5 @@
 import shutil
 from datetime import date
-from os import makedirs
 from pathlib import Path
 
 from watchdog.events import FileSystemEventHandler
@@ -10,12 +9,13 @@ from clean_desktop.extensions import extension_paths
 
 def add_date_to_path(path: Path):
     """
-    Helper function that adds current year/month to destination path. If
+    Helper function that adds current year/month to destination path. If the path
+    doesn't already exist, it is created.
 
     :param Path path: destination root to append subdirectories based on date
     """
     dated_path = path / f'{date.today().year}' / f'{date.today().month:02d}'
-    makedirs(dated_path, exist_ok=True)
+    dated_path.mkdir(parents=True, exist_ok=True)
     return dated_path
 
 

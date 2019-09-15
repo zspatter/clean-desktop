@@ -1,3 +1,5 @@
+#! /usr/bin/env python3
+
 from pathlib import Path
 from time import sleep
 
@@ -6,8 +8,8 @@ from watchdog.observers import Observer
 from clean_desktop.EventHandler import EventHandler
 
 if __name__ == '__main__':
-    watch_path = Path('/Users/zspatter/Desktop')
-    destination_root = Path('/Users/zspatter/Desktop/holder of things')
+    watch_path = Path.home() / 'Desktop'
+    destination_root = Path.home() / 'Desktop/holder of things'
     event_handler = EventHandler(watch_path=watch_path, destination_root=destination_root)
 
     observer = Observer()
