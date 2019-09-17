@@ -9,7 +9,7 @@ from clean_desktop.EventHandler import EventHandler
 
 if __name__ == '__main__':
     watch_path = Path.home() / 'Desktop'
-    destination_root = Path.home() / 'Documents/holder of things'
+    destination_root = Path.home() / 'Documents/holder_of_things'
     event_handler = EventHandler(watch_path=watch_path, destination_root=destination_root)
 
     observer = Observer()
