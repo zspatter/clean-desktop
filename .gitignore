@@ -203,3 +203,4 @@ local.properties
 .~lock.*#
 __pycache__
 nohup.out
+.mypy_cache
